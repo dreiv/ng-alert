@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dreiv/ng-alert/compare/v1.0.0...v1.1.0) (2019-12-25)
+
+
+### Features
+
+* **template:** add button for alert ([bb5a244](https://github.com/dreiv/ng-alert/commit/bb5a244a78c1074e3ce6e241ffbb7e0787e99f77))
+
 # 1.0.0 (2019-12-25)
 
 

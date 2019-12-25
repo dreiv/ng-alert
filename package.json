@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/dreiv/ng-alert.git"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
