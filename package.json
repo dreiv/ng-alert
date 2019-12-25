@@ -1,0 +1,96 @@
+{
+  "name": "ng-alert",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "test:lib-coverage": "ng test ng-alert --code-coverage --watch=false",
+    "report-coverage:lib": "cat ./coverage/ng-alert/lcov.info | codecov",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "check": "prettier --list-different 'projects/**/*.{html,css,scss,js,ts,json,md}'",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "format": "prettier --write 'projects/**/*'",
+    "format:css": "prettier-stylelint --quiet --write 'src/**/*.{css,scss}'",
+    "fix-ts": "eslint --fix '**/*.ts'",
+    "analyze": "ng build ng-alert-showcase --prod --stats-json && webpack-bundle-analyzer ./dist ng-alert-showcase/stats-es2015.json"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~8.2.14",
+    "@angular/common": "~8.2.14",
+    "@angular/compiler": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@angular/forms": "~8.2.14",
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/router": "~8.2.14",
+    "rxjs": "~6.5.3",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.21",
+    "@angular-devkit/build-ng-packagr": "~0.803.21",
+    "@angular/cli": "~8.3.21",
+    "@angular/compiler-cli": "~8.2.14",
+    "@angular/language-service": "~8.2.14",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "codecov": "^3.6.1",
+    "codelyzer": "^5.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "htmlhint": "^0.11.0",
+    "husky": "^3.1.0",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "lint-staged": "^9.5.0",
+    "ng-packagr": "^5.4.0",
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^9.0.1",
+    "prettier-stylelint": "^0.4.2",
+    "protractor": "~5.4.0",
+    "stylelint": "^12.0.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "stylelint-prettier": "^1.1.2",
+    "ts-node": "~7.0.0",
+    "tsickle": "^0.37.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.5.3",
+    "webpack-bundle-analyzer": "^3.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test-headless"
+    }
+  },
+  "lint-staged": {
+    "projects/**/*.{json,md,html}": [
+      "prettier --write",
+      "git add"
+    ],
+    "projects/**/*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "projects/**/*.{css,scss}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  }
+}
