@@ -4,11 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "copy:readme": "copyfiles ./README.md ./dist/ng-simple-alert",
+    "build": "npm run build:lib && npm run build:demo",
+    "build:lib": "npm run copy:readme && ng build ng-alert",
+    "build:showcase": "ng build ng-alert-showcase --base-href='https://dreiv.github.io/ng-alert/'",
     "test": "ng test",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "test:lib-coverage": "ng test ng-alert --code-coverage --watch=false",
     "report-coverage:lib": "cat ./coverage/ng-alert/lcov.info | codecov",
+    "publish:demo": "npx angular-cli-ghpages --dir=./dist/ng-alert-showcase",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "check": "prettier --list-different 'projects/**/*.{html,css,scss,js,ts,json,md}'",
@@ -38,12 +42,16 @@
     "@angular/cli": "~8.3.21",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/prompt": "^8.2.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "codecov": "^3.6.1",
     "codelyzer": "^5.0.0",
+    "copyfiles": "^2.1.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-import": "^2.19.1",
@@ -64,6 +72,7 @@
     "prettier-stylelint": "^0.4.2",
     "protractor": "~5.4.0",
     "stylelint": "^12.0.0",
+    "stylelint-config-prettier": "^8.0.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^19.0.0",
     "stylelint-order": "^3.1.1",
@@ -76,7 +85,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run test-headless"
+      "pre-commit": "lint-staged && npm run test-headless",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -91,6 +101,11 @@
     "projects/**/*.{css,scss}": [
       "stylelint --fix",
       "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   }
 }
