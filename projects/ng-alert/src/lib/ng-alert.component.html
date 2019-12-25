@@ -3,7 +3,7 @@
   *ngIf="alertMessage$ | async as alertMessage"
   [ngStyle]="{ background: alertMessage.color }"
 >
-  <span class="close-btn" (click)="closeAlert()">&times;</span>
+  <button (click)="closeAlert()">&times;</button>
   <strong>{{ alertMessage['prefix'] }}!</strong>
   {{ alertMessage['message'] }}
 </div>
