@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/dreiv/ng-alert/compare/v1.2.0...v1.3.0) (2019-12-25)
+
+
+### Features
+
+* **bump:** public package ([5896885](https://github.com/dreiv/ng-alert/commit/5896885e8801c9430ccd1d6f0e4ad6d722eb1941))
+
 # [1.2.0](https://github.com/dreiv/ng-alert/compare/v1.1.0...v1.2.0) (2019-12-25)
 
 
