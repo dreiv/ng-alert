@@ -1,5 +1,5 @@
 {
-  "name": "@dreiv/ng-alert",
+  "name": "@drei/ng-alert",
   "repository": {
     "type": "git",
     "url": "https://github.com/dreiv/ng-alert.git"
@@ -98,8 +98,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run test-headless",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged && npm run test-headless"
     }
   },
   "lint-staged": {
