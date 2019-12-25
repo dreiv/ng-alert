@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dreiv/ng-alert/compare/v1.1.0...v1.2.0) (2019-12-25)
+
+
+### Features
+
+* **bump:** changed package name ([89dae63](https://github.com/dreiv/ng-alert/commit/89dae63f5a28bd3cf68c83a92518a687943631a6))
+
 # [1.1.0](https://github.com/dreiv/ng-alert/compare/v1.0.0...v1.1.0) (2019-12-25)
 
 
