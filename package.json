@@ -83,7 +83,7 @@
     "prettier-stylelint": "^0.4.2",
     "protractor": "~5.4.0",
     "replace-json-property": "^1.4.3",
-    "semantic-release": "^15.14.0",
+    "semantic-release": "^17.2.3",
     "stylelint": "^12.0.0",
     "stylelint-config-prettier": "^8.0.0",
     "stylelint-config-rational-order": "^0.1.2",
